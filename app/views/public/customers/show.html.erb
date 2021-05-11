@@ -1,0 +1,38 @@
+<h1>MY PAGE</h1>
+  <h4>
+    <strong>登録情報</strong>
+    <%= link_to "編集する", edit_customers_path %>
+  </h4>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>ニックネーム</td>
+        <td><%= @customer.nickname %></td>
+      </tr>
+      <tr>
+        <td>氏名</td>
+        <td><%= @customer.last_name %>　<%= @customer.first_name %></td>
+      </tr>
+      <tr>
+        <td>カナ</td>
+        <td><%= @customer.last_kana_name %>　<%= @customer.first_kana_name %></td>
+      </tr>
+      <tr>
+      <tr>
+        <td>メールアドレス</td>
+        <td><%= @customer.email %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>MY DIY</h3>
+    <% @diys.each do |diy| %>
+      <div>
+        <%= link_to diy_path(diy.id) do %>
+          <%= attachment_image_tag diy, :image, size: "100x100" %>
+        <% end %>
+        <p>タイトル: <%= diy.diy_name %></p>
+        <p>説明: <%= diy.explanation %></p>
+      </div>
+    <% end %>

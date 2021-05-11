@@ -1,24 +1,31 @@
-# README
+# お家で職人
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+　誰でも自宅で簡単に「ものづくり」ができ、アクセサリーなどの小物から家具などの大掛かりなものまで、幅広く制作物を共有・評価できるサイト。
+ユーザーが手作りしたものを共有し、他のユーザーも同じもの作る、またはアレンジするなど気軽に気に入ったものを評価・作成できる、いわば"DIY"に特化した新しいSNS。
 
-Things you may want to cover:
+### サイトテーマ
+誰もが気軽にDIY
 
-* Ruby version
+### テーマを選んだ理由
+　昨今の世の中では外出が憚られているにも関わらず、家でできることは限られてきている。そんな中気軽に自宅で"DIY"ができれば自粛生活を楽しく過ごすことができるはず。
+加えて自分の作ったものが他の人に評価され実際にマネして作ってくれるようなことがあれば、やりがいすら生まれてくると考えられるため。
 
-* System dependencies
+### ターゲットユーザー
+DIYを始めたい人、自分の製作物を共有したい人、他の人のDIYが気になっている人
 
-* Configuration
+### 主な利用シーン
+巣ごもり中
 
-* Database creation
+## 機能一覧
+https://docs.google.com/spreadsheets/d/1Nc9SUn6EybfGFvf12dtjBevLswmikpG8GOS7QRh9TTw/edit#gid=0
 
-* Database initialization
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby"2.6.3",SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery,Bootstrap
+- IDE：Cloud9
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用素材
+- https://www.irasutoya.com/

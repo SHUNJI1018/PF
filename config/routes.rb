@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     root :to => 'homes#top'
     get '/about' => 'homes#about'
     
-    resources :diys, only: [:new, :create, :index, :show, :destroy]
+    resources :diys, only: [:new, :create, :index, :show, :update, :destroy]
     
     resource :customers, only: [:show, :edit, :update] do
       collection do

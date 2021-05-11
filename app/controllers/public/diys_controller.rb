@@ -5,8 +5,7 @@ class Public::DiysController < ApplicationController
     @diy = Diy.find(params[:id])
   end
 
-  def index
-    @diys = Diy.all
+  def new
     @diy = Diy.new
   end
 
@@ -16,8 +15,7 @@ class Public::DiysController < ApplicationController
     if @diy.save
       redirect_to customers_path
     else
-      @diys = Diy.all
-      render :index
+      render :new
     end
   end
 
@@ -25,13 +23,16 @@ class Public::DiysController < ApplicationController
   end
 
   def destroy
+    @diy = Diy.find(params[:id])
+    @diy.destroy
+    redirect_to customers_path
   end
 
 
   private
 
   def diy_params
-    params.require(:diy).permit(:diy_name, :image_id, :explanation)
+    params.require(:diy).permit(:diy_name, :image, :explanation)
   end
 
 end

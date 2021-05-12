@@ -6,6 +6,7 @@ class Customer < ApplicationRecord
 
   has_many :diys, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :diy_comments, dependent: :destroy
 
   # ログイン時の空白を許可しない
   validates :nickname, :last_name, :first_name, :last_kana_name, :first_kana_name, presence: true

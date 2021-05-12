@@ -3,6 +3,7 @@ class Public::DiysController < ApplicationController
 
   def show
     @diy = Diy.find(params[:id])
+    @diy_comment = DiyComment.new
   end
 
   def new

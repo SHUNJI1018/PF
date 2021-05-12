@@ -5,7 +5,8 @@
     <% end %>
     <p>タイトル: <%= diy.diy_name %></p>
     <p>説明: <%= diy.explanation %></p>
-    <p>いいね：<i class="far fa-thumbs-up thumbs-up_blue"><%= diy.favorites.count %></i></p>
+    <p>いいね：<i class="far fa-thumbs-up"><%= diy.favorites.count %></i></p>
+    <p>コメント数：<%= diy.diy_comments.count %></p>
   </div>
   
 <% end %>

@@ -1,0 +1,3 @@
+$(".comments-count").html("コメント数: <%= @diy.diy_comments.count %>");
+$(".diy_comments").html("<%= j(render 'public/diy_comments/index', diy: @diy) %>");
+$("#diy_comment_comment").val("");

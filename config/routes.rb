@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   # 管理者側(sign_in, _outのみ)
   devise_for :admins, skip: :all
   devise_scope :admin do
@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     post 'admin/sign_in' => 'admin/sessions#create', as: 'admin_session'
     delete 'admin/sign_out' => 'admin/sessions#destroy', as: 'destroy_admin_session'
   end
-  
+
   # ユーザー側(sign_up, _in, _out)
   devise_for :customers, skip: :all
   devise_scope :customer do
@@ -17,15 +17,18 @@ Rails.application.routes.draw do
     get 'customers/sign_up' => 'public/registrations#new', as: 'new_customer_registration'
     post 'customers' => 'public/registrations#create', as: 'customer_registration'
   end
-  
+
   scope module: :public do
     root :to => 'homes#top'
     get '/about' => 'homes#about'
-    
+
+    # 投稿に関するルーティング
     resources :diys, only: [:new, :create, :index, :show, :update, :destroy] do
+      resources :diy_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
     end
-    
+
+    # 会員情報に関するルーティング
     resource :customers, only: [:show, :edit, :update] do
       collection do
         # 退会を確認する画面の表示
@@ -36,6 +39,5 @@ Rails.application.routes.draw do
       end
     end
   end
-  
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end

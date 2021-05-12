@@ -1,0 +1,14 @@
+<% diy.diy_comments.each do |diy_comment| %>
+  <% diy_comment_customer = diy_comment.customer %>
+  <tr>
+  	<td>
+  		<%= link_to customers_path(diy_comment_customer), class: "customer_#{diy_comment_customer.id}" do %>
+    		<%= diy_comment_customer.nickname %>
+  		<% end %>
+  	</td>
+  	<td><%= diy_comment.comment %></td>
+  	<% if current_customer == diy_comment_customer %>
+    	<td><%= link_to 'Destroy', diy_diy_comment_path(diy_comment.diy_id, diy_comment.id), method: :delete, remote: true %></td>
+  	<% end %>
+  </tr>
+<% end %>

@@ -10,3 +10,12 @@
   <div class="favorite-btn">
     <%= render "public/favorites/favorite-btn", diy: @diy %>
   </div>
+  
+  <table class="diy_comments">
+    <%= render 'public/diy_comments/index', diy: @diy %>
+  </table>
+  
+  <%= form_with model:[@diy,@diy_comment], url: diy_diy_comments_path(@diy) do |f| %>
+    <%= f.text_area :comment, size:"90x5" %>
+    <%= f.submit '送信'%>
+  <% end %>

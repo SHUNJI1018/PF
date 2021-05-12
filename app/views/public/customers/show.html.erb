@@ -27,12 +27,6 @@
   </table>
 
   <h3>MY DIY</h3>
-    <% @diys.each do |diy| %>
-      <div>
-        <%= link_to diy_path(diy.id) do %>
-          <%= attachment_image_tag diy, :image, size: "100x100" %>
-        <% end %>
-        <p>タイトル: <%= diy.diy_name %></p>
-        <p>説明: <%= diy.explanation %></p>
-      </div>
-    <% end %>
+  <div>
+    <%= render 'public/diys/diys', diys: @diys %>
+  </div>

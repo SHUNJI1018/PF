@@ -1,0 +1,5 @@
+<% if diy.favorited_by?(current_customer) %>
+  <%= link_to diy.favorites.count, diy_favorites_path(diy), method: :delete, remote: true, class: "fas fa-heart heart_red" %>
+<% else %>
+  <%= link_to diy.favorites.count, diy_favorites_path(diy), method: :post, remote: true, class: "fas fa-heart heart_blue" %>
+<% end %>

@@ -30,10 +30,16 @@ Rails.application.routes.draw do
 
     # 会員情報に関するルーティング
     resources :customers, only: [:show, :edit, :update] do
+      
+      # フォロー・フォロワー機能に関するルーティング
+      resource :relationships, only: [:show, :create, :destroy]
+        get 'followings' => 'relationships#followings', as: 'followings'
+        get 'followers' => 'relationships#followers', as: 'followers'
+        get 'follow' => 'relationships#show'
+      
+      # 退会機能に関するルーティング
       collection do
-        # 退会を確認する画面の表示
         get 'hide' => 'customers#hide'
-        # 退会処理を行うURLを設定
         post 'out'
         patch 'out'
       end

@@ -1,0 +1,20 @@
+<table>
+  <tbody>
+    <% customers.each do |customer| %>
+      <tr>
+        <td><%= customer.nickname %></td>
+        <td>フォロー数: <%= customer.followings.count %></td>
+        <td>フォロワー数: <%= customer.followers.count %></td>
+        <td>
+        <% if current_customer.following?(customer) %>
+          <td><%= link_to "フォロー外す", customer_relationships_path(customer.id), method: :delete %></td>
+        <% else %>
+          <td><%= link_to "フォローする", customer_relationships_path(customer.id), method: :post %></td>
+        <% end %>
+        </td>
+
+        <td><%= link_to "詳細", customer_path(customer), class: "user_#{user.id}" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

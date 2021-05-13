@@ -23,6 +23,18 @@
         <td>メールアドレス</td>
         <td><%= customer.email %></td>
       </tr>
+      <tr>
+        <td><strong><%= customer.followings.count %></strong></td>
+        <td>
+          <%= link_to "フォロー中" %>
+        </td>
+      </tr>
+      <tr>
+        <td><strong><%= customer.followers.count %></strong></td>
+        <td>
+          <%= link_to "フォロワー" %>
+        </td>
+      </tr>
     </tbody>
   </table>
 

@@ -2,7 +2,7 @@
   <% diy_comment_customer = diy_comment.customer %>
   <tr>
   	<td>
-  		<%= link_to customers_path(diy_comment_customer), class: "customer_#{diy_comment_customer.id}" do %>
+  		<%= link_to customer_path(diy_comment_customer), class: "customer_#{diy_comment_customer.id}" do %>
     		<%= diy_comment_customer.nickname %>
   		<% end %>
   	</td>

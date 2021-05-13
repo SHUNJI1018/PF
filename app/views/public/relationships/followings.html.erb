@@ -1,0 +1,6 @@
+<h2>フォロー中</h2>
+<% if @customers.exists? %>
+  <%= render 'public/relationships/customers', customers: @customers %>
+<% else %>
+  <p>ユーザーはいません</p>
+<% end %>

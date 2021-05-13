@@ -2,7 +2,7 @@
   <nav>
     <ul>
       <% if customer_signed_in? %>
-        <li><%= link_to "マイページ", customers_path %></li>
+        <li><%= link_to "マイページ", customer_path(current_customer) %></li>
         <li><%= link_to "投稿する", new_diy_path %></li>
         <li><%= link_to "TOP", root_path %></li>
         <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>

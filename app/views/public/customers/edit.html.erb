@@ -1,6 +1,6 @@
 <h2>会員情報編集</h2>
 <div>
-  <%= form_with model: @customer, url:customers_path, local: true ,method: :put do |f| %>
+  <%= form_with model: @customer, url:customer_path(current_customer), local: true ,method: :put do |f| %>
      <div>
       <%= f.label :"ニックネーム" %>
       <%= f.text_field :nickname%>

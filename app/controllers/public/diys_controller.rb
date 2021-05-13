@@ -4,6 +4,7 @@ class Public::DiysController < ApplicationController
   def show
     @diy = Diy.find(params[:id])
     @diy_comment = DiyComment.new
+    # @customer = Customer.find(params[:id])
   end
 
   def new
@@ -14,7 +15,7 @@ class Public::DiysController < ApplicationController
     @diy = Diy.new(diy_params)
     @diy.customer_id = current_customer.id
     if @diy.save
-      redirect_to customers_path
+      redirect_to customer_path(current_customer)
     else
       render :new
     end
@@ -26,7 +27,7 @@ class Public::DiysController < ApplicationController
   def destroy
     @diy = Diy.find(params[:id])
     @diy.destroy
-    redirect_to customers_path
+    redirect_to customer_path(current_customer)
   end
 
 

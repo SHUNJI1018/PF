@@ -1,0 +1,20 @@
+<div>
+  <h2>"<%= customer.nickname %>" さんのページ</h2>
+    <div>
+      <p>フォロワー
+        <strong><%= customer.followers.count %></strong>人
+      </p>
+    </div>
+  <div>
+    <% if current_customer.following?(customer) %>
+      <%= link_to "フォロー中", customer_relationships_path(customer.id), method: :delete %>
+    <% else %>
+      <%= link_to "フォローする", customer_relationships_path(customer.id), method: :post %>
+    <% end %>
+  </div>
+
+    <h3>DIYS</h3>
+      <div>
+        <%= render 'public/diys/diys', diys: @diys %>
+      </div>
+</div>

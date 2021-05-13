@@ -4,6 +4,7 @@ class Public::DiysController < ApplicationController
   def show
     @diy = Diy.find(params[:id])
     @diy_comment = DiyComment.new
+    # @customer = Customer.find(params[:id])
   end
 
   def new

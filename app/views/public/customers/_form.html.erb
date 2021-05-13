@@ -26,13 +26,13 @@
       <tr>
         <td><strong><%= customer.followings.count %></strong></td>
         <td>
-          <%= link_to "フォロー中" %>
+          <%= link_to "フォロー中", customer_followings_path(customer) %>
         </td>
       </tr>
       <tr>
         <td><strong><%= customer.followers.count %></strong></td>
         <td>
-          <%= link_to "フォロワー" %>
+          <%= link_to "フォロワー", customer_followers_path(customer) %>
         </td>
       </tr>
     </tbody>

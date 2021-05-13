@@ -1,5 +1,5 @@
 <h2>フォロワー</h2>
-<% if @customer.exists? %>
+<% if @customers.exists? %>
   <%= render 'public/relationships/customers', customers: @customers %>
 <% else %>
   <p>ユーザーはいません</p>

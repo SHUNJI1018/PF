@@ -35,7 +35,6 @@ Rails.application.routes.draw do
       resource :relationships, only: [:show, :create, :destroy]
         get 'followings' => 'relationships#followings', as: 'followings'
         get 'followers' => 'relationships#followers', as: 'followers'
-        get 'follow' => 'relationships#show'
       
       # 退会機能に関するルーティング
       collection do

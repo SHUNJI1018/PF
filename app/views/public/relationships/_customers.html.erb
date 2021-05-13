@@ -2,7 +2,11 @@
   <tbody>
     <% customers.each do |customer| %>
       <tr>
-        <td><%= customer.nickname %></td>
+        <td>
+          <%= link_to customer_path(customer) do %>
+            <%= customer.nickname %>
+          <% end %>
+        </td>
         <td>フォロー数: <%= customer.followings.count %></td>
         <td>フォロワー数: <%= customer.followers.count %></td>
         <td>
@@ -12,8 +16,6 @@
           <td><%= link_to "フォローする", customer_relationships_path(customer.id), method: :post %></td>
         <% end %>
         </td>
-
-        <td><%= link_to "詳細", customer_path(customer), class: "user_#{user.id}" %></td>
       </tr>
     <% end %>
   </tbody>

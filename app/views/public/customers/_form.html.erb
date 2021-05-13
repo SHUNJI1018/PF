@@ -1,0 +1,32 @@
+<h1>MY PAGE</h1>
+  <h4>
+    <strong>登録情報</strong>
+    <%= link_to "編集する", edit_customer_path(current_customer) %>
+  </h4>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>ニックネーム</td>
+        <td><%= customer.nickname %></td>
+      </tr>
+      <tr>
+        <td>氏名</td>
+        <td><%= customer.last_name %>　<%= customer.first_name %></td>
+      </tr>
+      <tr>
+        <td>カナ</td>
+        <td><%= customer.last_kana_name %>　<%= customer.first_kana_name %></td>
+      </tr>
+      <tr>
+      <tr>
+        <td>メールアドレス</td>
+        <td><%= customer.email %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>MY DIY</h3>
+  <div>
+    <%= render 'public/diys/diys', diys: @diys %>
+  </div>

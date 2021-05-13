@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     end
 
     # 会員情報に関するルーティング
-    resource :customers, only: [:show, :edit, :update] do
+    resources :customers, only: [:show, :edit, :update] do
       collection do
         # 退会を確認する画面の表示
         get 'hide' => 'customers#hide'

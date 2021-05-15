@@ -1,15 +1,14 @@
 class Public::DiyCommentsController < ApplicationController
-  # before_action :authenticate_customer!
+  before_action :authenticate_customer!
   
   def create
     @diy = Diy.find(params[:diy_id])
-   
     @diy_comment = DiyComment.new(diy_comment_params)
     @diy_comment.diy_id = @diy.id
     @diy_comment.customer_id = current_customer.id
       unless @diy_comment.save
         render 'error'
-      end 
+      end
   end
   
   def destroy

@@ -36,6 +36,8 @@
   <div class="diy_comments">
     <%= render 'public/diy_comments/index', diy: @diy %>
   </div>
+
+<!--ログインしているときのみコメント投稿機能有効-->
 <% if customer_signed_in? %>
   <%= form_with model:[@diy,@diy_comment], url: diy_diy_comments_path(@diy) do |f| %>
     <%= f.text_area :comment, size:"90x5" %>

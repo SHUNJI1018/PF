@@ -3,6 +3,7 @@
     <p>フォロー：<strong><%= customer.followings.count %></strong></p>
     <p>フォロワー：<strong><%= customer.followers.count %></strong></p>
   <div>
+    <!--ログインしているときのみフォロー・フォロワー機能有効-->
     <% if customer_signed_in? %>
       <% if current_customer.following?(customer) %>
         <%= link_to "フォロー中", customer_relationships_path(customer.id), method: :delete %>

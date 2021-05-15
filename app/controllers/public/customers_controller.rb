@@ -1,9 +1,9 @@
 class Public::CustomersController < ApplicationController
-  # before_action :authenticate_customer!
 
   def show
     @customer = Customer.find(params[:id])
-    @diys = @customer.diys
+    # 投稿日の降順で表示
+    @diys = @customer.diys.all.order(created_at: :desc)
   end
 
   def hide

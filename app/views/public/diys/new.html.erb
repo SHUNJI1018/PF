@@ -1,10 +1,22 @@
 <h1>画像投稿フォーム</h1>
-<%= form_with model: @diy, local:true do |f| %>
-  <h4>画像</h4>
-  <%= f.attachment_field :image %>
-  <h4>タイトル</h4>
-  <%= f.text_field :diy_name %>
-  <h4>説明</h4>
-  <%= f.text_area :explanation %>
-  <%= f.submit '投稿' %>
-<% end %>
+<div>
+  <%= form_with model: @diy, local:true do |f| %>
+    <div>
+      <%= f.label :"画像" %>
+      <%= f.attachment_field :image %>
+    </div>
+    <div>
+      <%= f.label :"タイトル" %>
+      <%= f.text_field :diy_name %>
+    </div>
+    <div>
+      <%= f.label :"説明" %>
+      <%= f.text_area :explanation %>
+    </div>
+    <div>
+      <%= f.label :"ジャンル" %>
+      <%= f.collection_select :genre_id, Genre.all, :id, :name, {include_blank: "-- 選択してくたさい --"} %>
+    </div>
+    <%= f.submit '投稿' %>
+  <% end %>
+</div>

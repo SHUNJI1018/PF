@@ -1,26 +1,4 @@
-<h3>ログイン</h3>
+<% provide(:title, "ログイン") %>
 
-<div>
-  <%= form_with model: @customer, url:customer_session_path, local: true  do |f| %>
-  
-  <div class="form-group">
-    <%= f.label :"メールアドレス", class: "email" %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.label :"パスワード", class: "password" %>
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-  
-  <div class="actions">
-    <%= f.submit "ログイン" %>
-  </div>
-  
-  <% end %>
-</div>
 
-<div>
-  <%= link_to "まだ登録されていない方はこちら", new_registration_path(resource_name) %>
-</div>
-
+<%= render 'shared/session', resource: resource, title: "ログイン" %>

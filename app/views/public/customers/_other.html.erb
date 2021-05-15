@@ -1,15 +1,15 @@
 <div>
   <h2>"<%= customer.nickname %>" さんのページ</h2>
-    <div>
-      <p>フォロワー
-        <strong><%= customer.followers.count %></strong>人
-      </p>
-    </div>
+    <p>フォロー：<strong><%= customer.followings.count %></strong></p>
+    <p>フォロワー：<strong><%= customer.followers.count %></strong></p>
   <div>
-    <% if current_customer.following?(customer) %>
-      <%= link_to "フォロー中", customer_relationships_path(customer.id), method: :delete %>
-    <% else %>
-      <%= link_to "フォローする", customer_relationships_path(customer.id), method: :post %>
+    <!--ログインしているときのみフォロー・フォロワー機能有効-->
+    <% if customer_signed_in? %>
+      <% if current_customer.following?(customer) %>
+        <%= link_to "フォロー中", customer_relationships_path(customer.id), method: :delete %>
+      <% else %>
+        <%= link_to "フォローする", customer_relationships_path(customer.id), method: :post %>
+      <% end %>
     <% end %>
   </div>
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_13_063822) do
+ActiveRecord::Schema.define(version: 2021_05_15_022644) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_05_13_063822) do
 
   create_table "diys", force: :cascade do |t|
     t.integer "customer_id"
+    t.integer "genre_id"
     t.string "diy_name"
     t.string "image_id"
     t.text "explanation"
@@ -62,6 +63,12 @@ ActiveRecord::Schema.define(version: 2021_05_13_063822) do
   create_table "favorites", force: :cascade do |t|
     t.integer "customer_id"
     t.integer "diy_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

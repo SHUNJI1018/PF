@@ -1,5 +1,5 @@
 class Public::FavoritesController < ApplicationController
-  # before_action :authenticate_customer!
+   before_action :authenticate_customer!
   
   def create
     @diy = Diy.find(params[:diy_id])

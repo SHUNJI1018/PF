@@ -17,6 +17,11 @@ Rails.application.routes.draw do
     get 'customers/sign_up' => 'public/registrations#new', as: 'new_customer_registration'
     post 'customers' => 'public/registrations#create', as: 'customer_registration'
   end
+  
+  # 管理者側のルーティング
+  namespace :admin do
+    resources :genres, only: [:index, :create, :edit, :update]
+  end
 
   scope module: :public do
     root :to => 'homes#top'

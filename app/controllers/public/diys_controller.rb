@@ -4,7 +4,6 @@ class Public::DiysController < ApplicationController
   def show
     @diy = Diy.find(params[:id])
     @diy_comment = DiyComment.new
-    # @customer = Customer.find(params[:id])
   end
 
   def new
@@ -34,7 +33,7 @@ class Public::DiysController < ApplicationController
   private
 
   def diy_params
-    params.require(:diy).permit(:diy_name, :image, :explanation)
+    params.require(:diy).permit(:genre_id, :diy_name, :image, :explanation)
   end
 
 end

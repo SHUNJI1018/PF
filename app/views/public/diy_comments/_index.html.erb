@@ -1,0 +1,30 @@
+<table>
+  <h4>コメント一覧</h4>
+  <thead>
+    <tr>
+      <th>ニックネーム</th>
+      <th>コメント</th>
+      <th></th>
+    </tr>
+  </thead>
+    <% diy.diy_comments.each do |diy_comment| %>
+    <% diy_comment_customer = diy_comment.customer %>
+      <tbody>
+        <tr>
+          <td>
+            <%= link_to customer_path(diy_comment_customer), class: "customer_#{diy_comment_customer.id}" do %>
+              <%= diy_comment_customer.nickname %>
+            <% end %>
+          </td>
+          <td>
+            <%= diy_comment.comment %>
+          </td>
+          <td>
+            <% if current_customer == diy_comment_customer %>
+              <%= link_to '削除', diy_diy_comment_path(diy_comment.diy_id, diy_comment.id), method: :delete, remote: true %>
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    <% end %> 
+  </table>

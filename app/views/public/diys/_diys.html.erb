@@ -1,0 +1,14 @@
+<% diys.each do |diy| %>
+  <div>
+    <%= link_to diy_path(diy.id) do %>
+      <%= attachment_image_tag diy, :image, size: "100x100" %>
+    <% end %>
+    <p>タイトル: <%= diy.diy_name %></p>
+    <p>ジャンル：<%= diy.genre.name %></p>
+    <p>説明: <%= diy.explanation %></p>
+    <p>いいね：<i class="far fa-thumbs-up"><%= diy.favorites.count %></i></p>
+    <p>コメント数：<%= diy.diy_comments.count %></p>
+  </div>
+
+<% end %>
+

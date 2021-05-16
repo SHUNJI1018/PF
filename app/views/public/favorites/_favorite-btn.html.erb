@@ -1,0 +1,16 @@
+<!--ログインしているときのみいいね機能有効-->
+<% if customer_signed_in? %>
+  <% if diy.favorited_by?(current_customer) %>
+    <%= link_to diy.favorites.count, diy_favorites_path(diy), method: :delete, remote: true, class: "far fa-thumbs-up" %>
+  <% else %>
+    <%= link_to diy.favorites.count, diy_favorites_path(diy), method: :post, remote: true, class: "far fa-thumbs-up" %>
+  <% end %>
+<% else %>
+  <p>
+    <i class="far fa-thumbs-up">
+      <%= diy.favorites.count %>　
+      <%= link_to "ログイン", new_customer_session_path %>
+      (して"いいね <i class="far fa-thumbs-up"></i>"や"コメント"をしてみる)
+    </i>
+  </p>
+<% end %>

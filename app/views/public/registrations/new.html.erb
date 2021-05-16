@@ -1,0 +1,51 @@
+<h3>新規会員登録</h3>
+
+<div>
+  <%= form_with model: @customer, url:customer_registration_path, local:true do |f| %>
+  
+  <div class="form-group">
+    <%= f.label :"ニックネーム" %>
+    <%= f.text_field :nickname, placeholder: "ニックネーム", class: "nickname" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :"名前" %>
+    <%= f.label :"(姓)", class: "last_name" %>
+    <%= f.text_field :last_name, placeholder: "家職", class: "last_name" %>
+    <%= f.label :"(名)", class: "first_name" %>
+    <%= f.text_field :first_name, placeholder: "太郎", class: "first_name" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :"フリガナ" %>
+    <%= f.label :"(セイ)", class: "last_kana_name"%>
+    <%= f.text_field :last_kana_name, placeholder: "ウチショク", class: "last_kana_name"%>
+    <%= f.label :"(メイ)", class: "first_kana_name" %>
+    <%= f.text_field :first_kana_name,  placeholder: "タロウ", class: "first_kana_name" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :"メールアドレス", class: "email" %>
+    <%= f.email_field :email, autocomplete: "email", placeholder: "tarou@shokunin.com", class: "email" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :"パスワード(6文字以上)", class: "password" %>
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :"パスワード(確認用)", class: "password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="action">
+    <%= f.submit "新規登録" %>
+  </div>
+
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "すでに登録済の方はこちら", new_customer_session_path %>
+</div>

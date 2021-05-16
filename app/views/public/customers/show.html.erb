@@ -1,0 +1,7 @@
+<% if @customer == current_customer %>
+<!--自分の投稿一覧表示-->
+  <%= render 'public/customers/form', customer: @customer %>
+<% else %>
+<!--他のユーザーの投稿一覧表示-->
+  <%= render 'public/customers/other',customer: @customer %>
+<% end %>

@@ -25,7 +25,8 @@ class Public::DiysController < ApplicationController
   def destroy
     @diy = Diy.find(params[:id])
     @diy.destroy
-    redirect_to customer_path(current_customer)
+    # ユーザー本人または管理者が削除可能
+    redirect_to customer_path(@diy.customer)
   end
 
 

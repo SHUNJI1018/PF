@@ -17,13 +17,15 @@ Rails.application.routes.draw do
     get 'customers/sign_up' => 'public/registrations#new', as: 'new_customer_registration'
     post 'customers' => 'public/registrations#create', as: 'customer_registration'
   end
-  
+
   # 管理者側のルーティング
   namespace :admin do
     # ジャンルの追加・編集
     resources :genres, only: [:index, :create, :edit, :update]
+    # ユーザー管理に関するルーティング
+    resources :customers, only: [ :index, :edit, :update ]
   end
-  
+
   # 会員情報に関するルーティング
   scope module: :public do
     root :to => 'homes#top'
@@ -40,7 +42,7 @@ Rails.application.routes.draw do
       resource :relationships, only: [:show, :create, :destroy]
         get 'followings' => 'relationships#followings', as: 'followings'
         get 'followers' => 'relationships#followers', as: 'followers'
-      
+
       # 退会機能に関するルーティング
       collection do
         get 'hide' => 'customers#hide'

@@ -23,6 +23,8 @@
       <td>
         <% if @diy.customer == current_customer %>
           <%= link_to "削除", diy_path(@diy), method: :delete %>
+        <% elsif admin_signed_in? %>
+          <%= link_to "削除", diy_path(@diy), method: :delete %>
         <% end %>
       </td>
     </tr>

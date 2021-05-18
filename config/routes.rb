@@ -35,6 +35,9 @@ Rails.application.routes.draw do
     resources :diys, only: [:new, :create, :index, :show, :update, :destroy] do
       resources :diy_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
+        collection do
+          get 'search'
+        end
     end
 
     resources :customers, only: [:show, :edit, :update] do
@@ -51,5 +54,4 @@ Rails.application.routes.draw do
       end
     end
   end
-
 end

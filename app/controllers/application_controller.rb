@@ -1,5 +1,10 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_q
+
+  def search
+    @results = @q.result
+  end
 
   protected
 
@@ -29,6 +34,13 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :last_name, :first_name, :last_kana_name, :first_kana_name, :email])
     # 管理者用のログイン画面と会員側のサインイン画面用
     devise_parameter_sanitizer.permit(:sign_in, keys: [:email])
+  end
+
+
+  private
+
+  def set_q
+    @q = Diy.ransack(params[:q]) || Genre.ransack(params[:q])
   end
 
 end

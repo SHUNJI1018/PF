@@ -19,4 +19,12 @@
       <% end %>
     </ul>
   </nav>
+  <div>
+    <% if request.fullpath == "/" %>
+      <%= search_form_for @q, url: search_diys_path do |f| %>
+        <%= f.search_field :diy_name_cont %>
+        <%= f.submit "検索" %>
+      <% end %>
+    <% end %>
+  </div>
 </header>

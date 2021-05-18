@@ -28,8 +28,8 @@ class Public::DiysController < ApplicationController
     # ユーザー本人または管理者が削除可能
     redirect_to customer_path(@diy.customer)
   end
-
-
+  
+  
   private
 
   def diy_params

@@ -34,7 +34,12 @@ Rails.application.routes.draw do
     # 投稿に関するルーティング
     resources :diys, only: [:new, :create, :index, :show, :update, :destroy] do
       resources :diy_comments, only: [:create, :destroy]
+      # いいね機能に関するルーティング
       resource :favorites, only: [:create, :destroy]
+        # 検索機能に関するルーティング
+        collection do
+          get 'search'
+        end
     end
 
     resources :customers, only: [:show, :edit, :update] do
@@ -51,5 +56,4 @@ Rails.application.routes.draw do
       end
     end
   end
-
 end

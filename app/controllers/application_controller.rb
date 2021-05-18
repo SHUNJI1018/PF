@@ -2,8 +2,9 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_q
 
+  # 検索機能
   def search
-    @results = @q.result
+    @results = @q.result.order(created_at: :desc)
   end
 
   protected
@@ -39,8 +40,9 @@ class ApplicationController < ActionController::Base
 
   private
 
+  # 検索機能
   def set_q
-    @q = Diy.ransack(params[:q]) || Genre.ransack(params[:q])
+    @q = Diy.ransack(params[:q])
   end
 
 end

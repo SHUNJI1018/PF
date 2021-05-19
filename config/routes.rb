@@ -31,6 +31,10 @@ Rails.application.routes.draw do
     root :to => 'homes#top'
     get '/about' => 'homes#about'
 
+    # 通知機能に関するルーティング
+    resources :notifications, only: :index
+    delete :notifications, to: 'notifications#destroy_all'
+
     # 投稿に関するルーティング
     resources :diys, only: [:new, :create, :index, :show, :update, :destroy] do
       resources :diy_comments, only: [:create, :destroy]

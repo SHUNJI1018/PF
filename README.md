@@ -21,7 +21,7 @@ DIYを始めたい人、自分の製作物を共有したい人、他の人のDI
 https://docs.google.com/spreadsheets/d/1Nc9SUn6EybfGFvf12dtjBevLswmikpG8GOS7QRh9TTw/edit#gid=0
 
 ## 開発環境
-- OS：Linux(CentOS)
+- OS：Amazon Linux release 2
 - 言語：HTML,CSS,JavaScript,Ruby"2.6.3",SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery,Bootstrap

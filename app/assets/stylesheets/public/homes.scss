@@ -2,9 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 {
-  margin-bottom: 100px;
-  padding-left: 20px;
-  border-left: 10px solid #00DD00;
-  background-color: #EEEEEE;
+.search-feild {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
 }

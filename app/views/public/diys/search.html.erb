@@ -1,7 +1,9 @@
-<div>
-  <h3>検索結果 &emsp; <%= link_to "戻る", root_path %></h3>
-</div>
-
-<div>
-  <%= render "public/diys/diys", diys: @results %>
+<div class="main">
+  <div class="my-diys">
+  <h1>検索結果</h1>
+    <div class="rootback">
+      <%= link_to "戻る", root_path %>
+    </div>
+    <%= render "public/diys/diys", diys: @results %>
+  </div>
 </div>

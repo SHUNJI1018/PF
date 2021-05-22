@@ -1,34 +1,29 @@
 <header>
-  <nav>
-    <ul>
+  <div class="header-menu">
+    <ul class="menu">
       <% if customer_signed_in? %>
-        <li><%= link_to "マイページ", customer_path(current_customer) %></li>
-        <li><%= link_to "投稿する", new_diy_path %></li>
-        <li><%= link_to "TOP", root_path %></li>
-        <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
+        <li class="menu-item"><%= link_to customer_path(current_customer), class: 'btn btn-flat' do %>
+          <span>MY PAGE</span>
+          <% end %>
+        </li>
+        <li class="menu-item"><%= link_to "投稿する", new_diy_path %></li>
+        <li class="menu-item"><%= link_to "TOP", root_path %></li>
+        <li class="menu-item"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
         <% if unchecked_notifications.any? %>
           <i class="fas fa-bell" style="color: gold;"></i>
         <% end %>
-        <li><%= link_to "通知", notifications_path %></li>
+        <li class="menu-item"><%= link_to "通知", notifications_path %></li>
       <% elsif admin_signed_in? %>
-        <li><%= link_to "TOP", root_path %></li>
-        <li><%= link_to "会員一覧", admin_customers_path %></li>
-        <li><%= link_to "ジャンル追加", admin_genres_path %></li>
-        <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+        <li class="menu-item"><%= link_to "TOP", root_path %></li>
+        <li class="menu-item"><%= link_to "会員一覧", admin_customers_path %></li>
+        <li class="menu-item"><%= link_to "ジャンル追加", admin_genres_path %></li>
+        <li class="menu-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to "About", about_path %></li>
-        <li><%= link_to "TOP", root_path %></li>
-        <li><%= link_to "新規登録", new_customer_registration_path %></li>
-        <li><%= link_to "ログイン", new_customer_session_path %></li>
+        <li class="menu-item"><%= link_to "About", about_path %></li>
+        <li class="menu-item"><%= link_to "TOP", root_path %></li>
+        <li class="menu-item"><%= link_to "新規登録", new_customer_registration_path %></li>
+        <li class="menu-item"><%= link_to "ログイン", new_customer_session_path %></li>
       <% end %>
     </ul>
-  </nav>
-  <div>
-    <% if request.fullpath == "/" %>
-      <%= search_form_for @q, url: search_diys_path do |f| %>
-        <%= f.search_field :diy_name_cont %>
-        <%= f.submit "検索" %>
-      <% end %>
-    <% end %>
   </div>
 </header>

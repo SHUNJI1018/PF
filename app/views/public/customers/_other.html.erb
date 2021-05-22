@@ -1,8 +1,8 @@
 <div class="my-page">
-<h2>"<%= customer.nickname %>" さんのページ</h2>
-  <p>フォロー：<strong><%= customer.followings.count %></strong></p>
-  <p>フォロワー：<strong><%= customer.followers.count %></strong></p>
-  <p>
+<h1>"<%= customer.nickname %>" さんのページ</h1>
+  <div class="follow">フォロー：<strong><%= customer.followings.count %></strong></div>
+  <div class="follow">フォロワー：<strong><%= customer.followers.count %></strong></div>
+  <div class="follow">
   <!--ログインしているときのみフォロー・フォロワー機能有効-->
   <% if customer_signed_in? %>
     <% if current_customer.following?(customer) %>
@@ -11,7 +11,7 @@
       <%= link_to "フォローする", customer_relationships_path(customer.id), method: :post %>
     <% end %>
   <% end %>
-  </p>
+  </div>
 </div> 
 <div class="main">
   <div class="my-diys">

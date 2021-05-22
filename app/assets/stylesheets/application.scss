@@ -16,3 +16,29 @@
 
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+.main-diys {
+  margin: 0px 50px;
+  padding: 30px 20px;
+  border: solid 0.05px #C0C0C0;
+}
+
+
+.sidebar {
+  width: 200px;
+  margin-left: 100px;
+}

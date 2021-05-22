@@ -1,8 +1,11 @@
-<h1>top page</h1>
-
-<div>
-  <h4>Diys</h4>
-    <div>
-      <%= render 'public/diys/diys', diys: @diys %>
-    </div>
+<div class="main">
+  <div class="sidebar">
+    <p>genre</p>
+  </div>
+  <div class="main-diys">
+    <h1>
+      <span>みんなの投稿</span>
+    </h1>
+    <%= render 'public/diys/diys', diys: @diys %>
+  </div>
 </div>

@@ -1,3 +1,4 @@
+<div class="my-page">
 <h1>MY PAGE</h1>
   <h4>
     <strong>登録情報</strong>
@@ -37,8 +38,10 @@
       </tr>
     </tbody>
   </table>
+</div>
 
-  <h3>MY DIY</h3>
-  <div>
-    <%= render 'public/diys/diys', diys: @diys %>
+  <div class="main">
+    <div class="my-diys">
+      <%= render 'public/diys/diys', diys: @diys %>
+    </div>
   </div>

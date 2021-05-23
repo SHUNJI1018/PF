@@ -2,7 +2,9 @@
 <h1>MY PAGE</h1>
   <h4>
     <strong>登録情報</strong>
-    <%= link_to "編集する", edit_customer_path(current_customer) %>
+    <%= link_to edit_customer_path(current_customer) do %>
+      <i class="fas fa-user-cog"></i>
+    <% end %>
   </h4>
 
   <table>
@@ -41,7 +43,7 @@
 </div>
 
   <div class="main-1">
-    <div class="my-diys-1">
+    <div class="my-diys">
       <%= render 'public/diys/diys', diys: @diys %>
     </div>
   </div>

@@ -15,3 +15,9 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+/*global $*/
+
+$(document).ready(function() {
+  $('.top-visual').css('display', 'none').fadeIn(2000);
+});

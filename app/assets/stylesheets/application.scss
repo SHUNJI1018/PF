@@ -26,10 +26,17 @@
 header {
   border-bottom: solid 0.05px;
   width: 100%;
+  height: 100px;
+  background-image: image-url('banner-895571_1920.jpg');
 }
 
-.header-menu {
-  box-sizing: border-box;
+.logo {
+  font-size: 4rem;
+  font-family: Caveat;
+  font-weight: bold;
+  list-style: none;
+  text-decoration: none;
+  color: black;
 }
 
 .main {
@@ -37,12 +44,13 @@ header {
   flex-direction: row;
   justify-content: flex-start;
   height: 1900px;
-  background-color: #DDDDDD;
+  background-image: image-url('banner-1709772_1920.jpg');
 }
 
 .main-diys {
   margin-left: 350px;
   padding: 30px 20px;
+  width: 1300px;
   border: solid 0.05px #C0C0C0;
   background-color: white;
 }
@@ -52,7 +60,7 @@ header {
   flex-direction: row;
   justify-content: flex-start;
   margin-bottom: 100px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .main-diys-1 {
@@ -66,7 +74,7 @@ header {
   display: flex;
   flex-direction: column;
   width: 300px;
-  margin-top: 150px;
+  margin-top: 50px;
   margin-left: 50px;
   position: fixed;
 }

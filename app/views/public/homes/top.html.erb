@@ -1,20 +1,22 @@
-<div class="search-feild">
-  <% if request.fullpath == "/" %>
-    <%= search_form_for @q, url: search_diys_path do |f| %>
-      <%= f.search_field :diy_name_cont %>
-      <%= f.submit "検索" %>
-    <% end %>
-  <% end %>
-</div>
-
-<div class="main-1">
-  <div class="main-diys-1">
-    <h1>
-      <span>みんなの投稿</span>
-    </h1>
-    <%= render 'public/diys/diys', diys: @diys %>
+<div class="toppage">
+  <h2 class="top-title">ようこそ&emsp;お家で職人&emsp;へ</h2>
+  <div class="top-visual">
+    <div class="top-visual__image"></div>
+    <div class="top-visual__text">
+    <h4>
+      <p class="top-visual__text--title">お家で職人　とは・・・</p>
+        &emsp;誰でも自宅で簡単に「ものづくり」ができ
+        アクセサリーなどの小物から、家具などの大掛かりなものまで
+        幅広く制作物を共有・評価できるサイト。<br>
+        &emsp;ユーザーが手作りしたものを共有し、他のユーザーも同じもの作る、
+        またはアレンジするなど気軽に気に入ったものを評価・作成できる、
+        いわば"DIY"に特化した新しいSNS。
+    </h4>
+    </div>
+  </div>
+  
+  <div>
+    <h2>・</h2>
   </div>
 </div>
-<div class="pagination">
-  <%= paginate @diys %>
-</div>
+

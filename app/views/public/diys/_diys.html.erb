@@ -12,10 +12,14 @@
       <div class="explanation"><%= diy.explanation %></div>
       <div class="diy-left">
         <div>
-          <i class="far fa-thumbs-up"><%= diy.favorites.count %></i>
+          <i class="far fa-thumbs-up"><%= diy.favorites.count %></i>&emsp;
         </div>
-        &emsp;コメント数：<%= diy.diy_comments.count %>
-        &emsp;<%= diy.created_at.strftime('%Y年%m月%d日') %>
+        <div>
+          <i class="far fa-comment-dots"><%= diy.diy_comments.count %></i>&emsp;
+        </div>
+        <div>
+          <%= diy.created_at.strftime('%Y年%m月%d日') %>
+        </div>
       </div>
     </div>
   </div>

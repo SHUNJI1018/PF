@@ -5,5 +5,79 @@
 .search-feild {
   display: flex;
   justify-content: flex-end;
-  margin-top: 20px;
 }
+
+// ボタンに関するCSS
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 1rem 1rem 3.5rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+
+
+a.btn-flat {
+  border: 2px solid #000;
+  border-radius: 0;
+  background: #fff;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  width: 240px;
+}
+
+a.btn-flat:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 100%;
+  content: '';
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-transform: translateX(0) translateY(0);
+  transform: translateX(0) translateY(0);
+  border-radius: 0 50% 50% 0;
+  background: #000;
+}
+
+a.btn-flat:hover:before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: bold;
+  line-height: 48px;
+  width: 40px;
+  height: 48px;
+  content: '\f061';
+  -webkit-transform: translateX(220px) translateY(.4rem);
+  transform: translateX(220px) translateY(.4rem);
+  color: #fff;
+  border-radius: 50%;
+}
+

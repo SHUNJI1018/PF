@@ -64,6 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # 追加GEM
 gem 'devise'
 
+
 gem 'jquery-rails'
 
 gem 'font-awesome-sass', '~> 5.13'

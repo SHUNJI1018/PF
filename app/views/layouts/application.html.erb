@@ -4,14 +4,23 @@
     <title>Utishoku</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
     <%= render 'layouts/header' %>
     
-    <%= yield %>
+    <div class="main">
+      <div class="sidebar">
+        <%= render 'public/homes/sidebar' %>
+      </div>
+      <div class="main-diys">
+        <%= yield %>
+      </div>
+    
   </body>
 </html>

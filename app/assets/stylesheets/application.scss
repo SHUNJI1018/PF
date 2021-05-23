@@ -23,26 +23,12 @@
   box-sizing: border-box;
 }
 
+header {
+  border-bottom: solid 0.05px;
+  width: 100%;
+}
+
 .header-menu {
-  height: 48px;
-  border-bottom: 1px solid;
-  box-sizing: border-box;
-}
-
-.menu {
-  max-width: 1300px;
-  height: 48px;
-  margin-top: 40px;
-  display: flex;
-}
-
-.menu-item {
-  position: relative;
-  margin-left: 24px;
-  height: 100%;
-  display: flex;
-  line-height: 19px;
-  font-size: 15px;
   box-sizing: border-box;
 }
 
@@ -50,19 +36,39 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin-bottom: 100px;
+  height: 1900px;
+  background-color: #DDDDDD;
 }
 
 .main-diys {
-  margin: 0px 50px;
+  margin-left: 350px;
   padding: 30px 20px;
   border: solid 0.05px #C0C0C0;
+  background-color: white;
 }
 
+.main-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+.main-diys-1 {
+  margin: 0 50px;
+  padding: 30px 20px;
+  border: solid 0.05px #C0C0C0;
+  background-color: white;
+}
 
 .sidebar {
-  width: 200px;
-  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-top: 150px;
+  margin-left: 50px;
+  position: fixed;
 }
 
 h1 {
@@ -94,9 +100,21 @@ td {
   padding: 10px;
 }
 
-.btn-flat {
-  overflow: hidden;
-  color: #fff;
-  border-radius: 0;
-  background: #000;
+th {
+  padding: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.nav {
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 50px;
+  }
 }

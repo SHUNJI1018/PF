@@ -1,0 +1,62 @@
+<nav class="nav">
+  <ul class="nav__list">
+  <% if customer_signed_in? %>
+    <li class="nav__item"><%= link_to customer_path(current_customer), class: 'btn btn-flat' do %>
+      <span><i class="fas fa-user-circle"></i>&nbsp;MY PAGE</span>
+      <% end %>
+    </li>
+    
+    <li class="nav__item"><%= link_to new_diy_path, class: 'btn btn-flat' do %>
+      <span><i class="fas fa-arrow-circle-up"></i>&nbsp;投稿</span>
+      <% end %>
+    </li>
+    
+    <li class="nav__item"><%= link_to root_path, class: 'btn btn-flat' do %>
+      <span><i class="fas fa-users"></i>&nbsp;みんなの投稿</span>
+      <% end %>
+    </li>
+    
+    <li class="nav__item"><%= link_to notifications_path, class: 'btn btn-flat' do %>
+      <span><i class="fas fa-bell"></i>&nbsp;通知
+        <% if unchecked_notifications.any? %>
+          <i class="fas fa-exclamation" style="color: red;"></i>
+        <% end %>
+      </span>
+      <% end %>
+    </li>
+    
+    <li class="nav__item"><%= link_to destroy_customer_session_path, method: :delete, class: 'btn btn-flat' do %>
+      <span><i class="fas fa-sign-out-alt"></i>&nbsp;ログアウト</span>
+      <% end %>
+    </li>
+    
+  <% elsif admin_signed_in? %>
+    <li class="nav__item"><%= link_to "TOP", root_path %></li>
+    <li class="nav__item"><%= link_to "会員一覧", admin_customers_path %></li>
+    <li class="nav__item"><%= link_to "ジャンル追加", admin_genres_path %></li>
+    <li class="menu-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+    
+  <% else %>
+    <li class="nav__item"><%= link_to about_path, class: 'btn btn-flat' do %>
+      <span>About</span>
+      <% end %>
+    </li>
+    
+    <li class="nav__item"><%= link_to root_path, class: 'btn btn-flat' do %>
+      <span>TOP</span>
+      <% end %>
+    </li>
+    
+    <li class="nav__item"><%= link_to new_customer_registration_path, class: 'btn btn-flat' do %>
+      <span>新規登録</span>
+      <% end %>
+    </li>
+    
+    <li class="nav__item"><%= link_to new_customer_session_path, class: 'btn btn-flat' do %>
+      <span>ログイン</span>
+      <% end %>
+    </li>
+    
+  <% end %>
+  </ul>
+</nav>

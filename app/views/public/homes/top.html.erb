@@ -1,10 +1,11 @@
 <div class="toppage">
   <h2 class="top-title">ようこそ&emsp;お家で職人&emsp;へ</h2>
+  <hr class="hr-style">
   <div class="top-visual">
     <div class="top-visual__image"></div>
     <div class="top-visual__text">
     <h4>
-      <p class="top-visual__text--title">About</p>
+      <p class="top-visual__text--title">"&nbsp;About&nbsp;"</p>
         &emsp;誰でも自宅で簡単に「ものづくり」ができ、
         アクセサリーなどの小物から、家具などの大掛かりなものまで
         幅広く制作物を共有・評価できるサイト。<br>
@@ -16,38 +17,42 @@
   </div>
 
   <div class="slideshow">
-    <h2 class="top-visual__text--title">豊富なジャンル</h2>
+    <h2 class="top-visual__text--title">"&nbsp;豊富なジャンル&nbsp;"</h2>
       <div class="genres">
         <div class="gneres__image">
           <div class="genres__image--1">
-            <p class="text">" Furniture "</P>
+            <p class="text">- Furniture -</P>
           </div>
           <div class="genres__image--2">
-            <p class="text">" Home goods "</p>
+            <p class="text">- Home goods -</p>
           </div>
           <div class="genres__image--3">
-            <p class="text">" Handicraft "</P>
+            <p class="text">- Handicraft -</P>
           </div>
           <div class="genres__image--4">
-            <p class="text">" Accessories "</P>
+            <p class="text">- Accessories -</P>
           </div>
           <div class="genres__image--5">
-            <p class="text">" Other "</p>
+            <p class="text">- Other -</p>
           </div>
         </div>
       </div>
   </div>
 
   <div class="share">
-    <h2 class="share__title">共有してみる</h2>
+    <h2 class="share__title">"&nbsp;共有してみる&nbsp;"</h2>
     <div class="share__action">
       <div class="share__action_pos">
-        <i class="fas fa-arrow-circle-up"></i>&emsp;投稿する
+        <%= link_to new_diy_path, class: 'share-text' do %>
+          <i class="fas fa-arrow-circle-up"></i>&emsp;投稿する
+        <% end %>
       </div>
     </div>
     <div class="share__action">
       <div class="share__action_pos">
-        <i class="fas fa-images"></i>&emsp;みんなの投稿
+        <%= link_to index_path, class: 'share-text' do %>
+          <i class="fas fa-images"></i>&emsp;みんなの投稿
+        <% end %>
       </div>
     </div>
   </div>

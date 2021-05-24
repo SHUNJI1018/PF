@@ -43,7 +43,7 @@ $(window).on("scroll", function() {
   var scroll_top = $(window).scrollTop();
   $(".share__action").each(function() {
     var elem_pos = $(this).offset().top;
-    if (scroll_top >= elem_pos - window_h+200) {
+    if (scroll_top >= elem_pos - window_h+300) {
       $(this).addClass("fadein");
     } else {
       $(this).removeClass("fadein");

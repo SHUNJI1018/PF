@@ -2,6 +2,7 @@
   <h1 class="title">【<%= @diy.diy_name %>】</h1>
     <div><%= attachment_image_tag @diy, :image, size: "320x240" %></div>
     <div class="title">
+      created by
       <%= link_to customer_path(@diy.customer) do %>
         <%= @diy.customer.nickname %>
       <% end %>
@@ -15,7 +16,7 @@
         <%= link_to "削除", diy_path(@diy), method: :delete %>
       <% end %>
     </div>
-    
+
     <div class="favorite-btn">
       <%= render "public/favorites/favorite-btn", diy: @diy %>
     </div>

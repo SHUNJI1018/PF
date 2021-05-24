@@ -21,6 +21,7 @@
   flex-direction: column;
   width: 800px;
   margin: 0 235px;
+  max-height: 3000px;
 }
 
 .thumbnail {
@@ -78,7 +79,8 @@ h3 {
   border: 0.1px solid;
   border-radius: 8px;
   padding: 8px;
-  height: 300px;
+  min-height: 300px;
+  max-height: 3000px;
 }
 
 .diy-left {

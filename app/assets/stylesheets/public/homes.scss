@@ -26,7 +26,7 @@
 .top-visual {
   display: flex;
   height: 500px;
-  margin-top: 150px;
+  margin: 150px 150px 0px;
 
   &__image {
     background-image: image-url('shokunin.jpg');
@@ -35,13 +35,12 @@
     width: 180rem;
     background-repeat: no-repeat;
     margin-top: 20px;
-    margin-left: 20px;
   }
 
   &__text {
-    margin: 20px 30px 50px;
+    margin: 20px 0 50px 30px;
     text-align: left;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: #777777;
 
     &--title {
@@ -55,7 +54,7 @@
 }
 
 .slideshow {
-  margin: 300px 200px;
+  margin: 200px 200px 300px;
 }
 
 .genres {
@@ -113,7 +112,7 @@
 }
 
 .share {
-  height: 800px;
+  height: 700px;
   &__title {
     margin: 0 200px;
     border-top: double 3px black;
@@ -124,7 +123,7 @@
   }
 
   &__action {
-    margin: 50px 450px 100px;
+    margin: 50px 450px 150px;
     text-align: center;
     font-size: 2.5rem;
     padding: 20px;
@@ -133,6 +132,11 @@
     transition: opacity 1.5s, transform 0.5s;
     border-style: dashed solid;
   }
+}
+
+.share-text {
+  text-decoration: none;
+  color: black;
 }
 
 // ボタンに関するCSS
@@ -214,4 +218,8 @@ a.btn-flat:hover:before {
 .fadein {
   opacity: 1;
   transform: translateX(0);
+}
+
+.hr-style {
+  border-bottom: double 3px black;
 }

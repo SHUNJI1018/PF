@@ -31,28 +31,31 @@ header {
 }
 
 .logo {
+  position: absolute;
+  left: 40px;
   font-size: 4rem;
   font-family: Caveat;
   font-weight: bold;
   list-style: none;
   text-decoration: none;
-  color: black;
+  color: white;
+  text-shadow: 5px 0 3px black;
 }
 
 .main {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  height: 1900px;
+  height: 100%;
+  min-height: 1000px;
   background-image: image-url('banner-1709772_1920.jpg');
-}
 
-.main-diys {
-  margin-left: 350px;
-  padding: 30px 20px;
-  width: 1300px;
-  border: solid 0.05px #C0C0C0;
-  background-color: white;
+  &__diys {
+    margin-left: 350px;
+    padding: 30px 20px;
+    border: solid 0.05px #C0C0C0;
+    background-color: white;
+  }
 }
 
 .main-1 {
@@ -60,14 +63,14 @@ header {
   flex-direction: row;
   justify-content: flex-start;
   margin-bottom: 100px;
-  margin-top: 50px;
-}
+  margin: 50px 20px 0px;
 
-.main-diys-1 {
-  margin: 0 50px;
-  padding: 30px 20px;
-  border: solid 0.05px #C0C0C0;
-  background-color: white;
+  &__diys-1 {
+    margin: 0 50px;
+    padding: 30px 20px;
+    border: solid 0.05px #C0C0C0;
+    background-color: white;
+  }
 }
 
 .sidebar {
@@ -78,6 +81,8 @@ header {
   margin-left: 50px;
   position: fixed;
 }
+
+
 
 h1 {
   margin-top: 20px;
@@ -105,7 +110,7 @@ table {
 }
 
 td {
-  padding: 10px;
+  padding: 10px 25px;
 }
 
 th {

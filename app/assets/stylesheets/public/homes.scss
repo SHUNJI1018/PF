@@ -10,49 +10,130 @@
 
 .toppage {
   text-align: center;
+  width: 80rem;
 }
 
 .top-title {
   text-align: center;
   width: 60%;
   font-size: 2rem;
-  margin: auto;
-  color: #fff;
-  background: #094;
-  -webkit-box-shadow: 5px 5px 0 #007032;
-  box-shadow: 5px 5px 0 #007032;
+  margin: 50px auto;
+  color: white;
+  text-shadow: 3px 0 3px black;
+  background-image: image-url('top-title.jpg');
 }
 
 .top-visual {
   display: flex;
   height: 500px;
-  margin-top: 70px;
+  margin-top: 150px;
 
   &__image {
     background-image: image-url('shokunin.jpg');
     background-size: contain;
     background-position: top center;
-    width: 200rem;
+    width: 180rem;
     background-repeat: no-repeat;
     margin-top: 20px;
     margin-left: 20px;
   }
 
   &__text {
-    margin-top: 20px;
-    margin-right: 30px;
+    margin: 20px 30px 50px;
     text-align: left;
     font-size: 1.3rem;
     color: #777777;
+
     &--title {
+      border-top: double 3px black;
       text-align: center;
       font-size: 2rem;
-      padding-bottom: 40px;
+      padding-bottom: 60px;
       color: black;
     }
   }
 }
 
+.slideshow {
+  margin: 300px 200px;
+}
+
+.genres {
+  height: 500px;
+
+  &__image {
+
+    &--1 {
+      background-image: image-url('furniture.jpg');
+      font-size: 2.5rem;
+      font-weight: bold;
+      font-family: Caveat;
+      text-shadow: 1px 0 3px white;
+    }
+    &--2 {
+      background-image: image-url('goods.jpg');
+      font-size: 2.5rem;
+      font-weight: bold;
+      font-family: Caveat;
+      text-shadow: 1px 0 3px gray;
+    }
+    &--3 {
+      background-image: image-url('handcraft.jpg');
+      font-size: 2.5rem;
+      font-weight: bold;
+      font-family: Caveat;
+      color: white;
+      text-shadow: 1px 0 3px black;
+    }
+    &--4 {
+      background-image: image-url('accessories.jpg');
+      font-size: 2.5rem;
+      font-weight: bold;
+      font-family: Caveat;
+      color: white;
+      text-shadow: 1px 0 3px black;
+    }
+    &--5 {
+      background-image: image-url('others.jpg');
+      font-size: 2.5rem;
+      font-weight: bold;
+      font-family: Caveat;
+      color: white;
+      text-shadow: 1px 0 3px black;
+    }
+  }
+}
+
+.text {
+  position:absolute;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  margin:auto;
+}
+
+.share {
+  height: 800px;
+  &__title {
+    margin: 0 200px;
+    border-top: double 3px black;
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 60px;
+    color: black;
+  }
+
+  &__action {
+    margin: 50px 450px 100px;
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 20px;
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: opacity 1.5s, transform 0.5s;
+    border-style: dashed solid;
+  }
+}
 
 // ボタンに関するCSS
 *,
@@ -128,3 +209,9 @@ a.btn-flat:hover:before {
   border-radius: 50%;
 }
 
+// "共有してみる"のアクション
+
+.fadein {
+  opacity: 1;
+  transform: translateX(0);
+}

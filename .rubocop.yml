@@ -75,3 +75,5 @@ Style/StringConcatenation:
 Layout/LineLength:
   Max: 154
 
+Metrics/BlockLength:
+  Max: 56

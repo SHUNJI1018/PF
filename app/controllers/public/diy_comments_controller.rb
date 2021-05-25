@@ -9,8 +9,6 @@ class Public::DiyCommentsController < ApplicationController
     @diy_comment_diy = @diy_comment.diy
       if @diy_comment.save
         @diy_comment_diy.create_notification_diy_comment!(current_customer, @diy_comment.id)
-      else
-        render 'error'
       end
   end
   

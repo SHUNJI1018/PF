@@ -1,9 +1,10 @@
 class Public::CustomersController < ApplicationController
+  before_action :authenticate_customer!, except: :show
 
   def show
     @customer = Customer.find(params[:id])
     # 投稿日の降順で表示
-    @diys = @customer.diys.all.order(created_at: :desc)
+    @diys = @customer.diys.all.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def hide

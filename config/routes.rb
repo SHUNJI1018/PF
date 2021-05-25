@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   # 会員情報に関するルーティング
   scope module: :public do
     root :to => 'homes#top'
-    get '/about' => 'homes#about'
+    get '/index' => 'homes#index'
 
     # 通知機能に関するルーティング
     resources :notifications, only: :index

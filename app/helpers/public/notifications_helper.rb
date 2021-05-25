@@ -11,8 +11,8 @@ def notification_form(notification)
     when "favorite" then
       tag.a(notification.visiter.nickname, href:customer_path(@visiter), style:"font-weight: bold;")+"が"+tag.a('あなたの投稿', href:diy_path(notification.diy_id), style:"font-weight: bold;")+"にいいねしました"
     when "diy_comment" then
-        @diy_comment = DiyComment.find_by(id: @visiter_diy_comment)&.content
-        tag.a(@visiter.nickname, href:customer_path(@visiter), style:"font-weight: bold;")+"が"+tag.a('あなたの投稿', href:diy_path(notification.diy_id), style:"font-weight: bold;")+"にコメントしました"
+      @diy_comment = DiyComment.find_by(id: @visiter_diy_comment)
+      tag.a(@visiter.nickname, href:customer_path(@visiter), style:"font-weight: bold;")+"が"+tag.a('あなたの投稿', href:diy_path(notification.diy_id), style:"font-weight: bold;")+"にコメントしました"
   end
 end
 

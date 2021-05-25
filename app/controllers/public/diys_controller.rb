@@ -1,4 +1,5 @@
 class Public::DiysController < ApplicationController
+  before_action :authenticate_customer!, except: :show
 
   def show
     @diy = Diy.find(params[:id])

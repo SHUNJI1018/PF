@@ -21,6 +21,9 @@ class Customer < ApplicationRecord
   # ログイン時の空白を許可しない
   validates :nickname, :last_name, :first_name, :last_kana_name, :first_kana_name, presence: true
 
+  # ニックネームの一意性
+  validates :nickname, uniqueness: true
+
   # サインイン時のカタカナ入力に関するバリデーション
   validates :last_kana_name, :first_kana_name,
             format: { with: /\A[\p{katakana}　ー－&&[^ -~｡-ﾟ]]+\z/, message: "全角カタカナのみで入力して下さい" }

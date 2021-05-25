@@ -7,12 +7,11 @@ class Public::CustomersController < ApplicationController
     @diys = @customer.diys.all.order(created_at: :desc).page(params[:page]).per(5)
   end
 
-  def hide
-  end
+  def hide; end
 
   def out
     @customer = current_customer
-    @customer.update(is_valid: "退会")
+    @customer.update(is_valid: '退会')
     reset_session
     redirect_to root_path
   end
@@ -30,11 +29,10 @@ class Public::CustomersController < ApplicationController
     end
   end
 
-
   private
 
   def customer_params
-    params.require(:customer).permit(:nickname, :first_name, :last_name, :first_kana_name, :last_kana_name, :is_valid, :email)
+    params.require(:customer).permit(:nickname, :first_name, :last_name, :first_kana_name, :last_kana_name, :is_valid,
+                                     :email)
   end
-
 end

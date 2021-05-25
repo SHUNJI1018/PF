@@ -1,5 +1,4 @@
 class Admin::GenresController < ApplicationController
-
   def index
     @genre = Genre.new
     @genres = Genre.all
@@ -13,7 +12,6 @@ class Admin::GenresController < ApplicationController
       @genres = Genre.all
       render :index
     end
-
   end
 
   def edit

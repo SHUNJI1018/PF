@@ -8,6 +8,6 @@
 
 # 管理者のログイン
 Admin.create!(
-   email: 'admin@admin.com',
-   password: '000000',
+  email: 'admin@admin.com',
+  password: '000000'
 )

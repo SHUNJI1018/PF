@@ -1,0 +1,77 @@
+inherit_from: .rubocop_todo.yml
+
+# The behavior of RuboCop can be controlled via the .rubocop.yml
+# configuration file. It makes it possible to enable/disable
+# certain cops (checks) and to alter their behavior if they accept
+# any parameters. The file can be placed either in your home
+# directory or in some project directory.
+#
+# RuboCop will start looking for the configuration file in the directory
+# where the inspected file is and continue its way up to the root directory.
+#
+# See https://docs.rubocop.org/rubocop/configuration
+
+require:
+  - rubocop-rails
+  
+Metrics/AbcSize:
+  Max: 34
+  
+Metrics/BlockLength:
+  Max: 41
+
+Metrics/MethodLength:
+  Max: 17
+  
+Rails/FilePath:
+  Exclude:
+    - 'config/environments/development.rb'
+    - 'config/puma.rb'
+
+Rails/HasManyOrHasOneDependent:
+  Exclude:
+    - 'app/models/genre.rb'
+    
+Rails/HelperInstanceVariable:
+  Exclude:
+    - 'app/helpers/public/notifications_helper.rb'
+
+Rails/InverseOf:
+  Exclude:
+    - 'app/models/customer.rb'
+
+Rails/UniqueValidationWithoutIndex:
+  Exclude:
+    - 'app/models/customer.rb'
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/GlobalStdStream:
+  Exclude:
+    - 'config/environments/production.rb'
+
+Style/GuardClause:
+  Exclude:
+    - 'app/models/customer.rb'
+
+Style/RedundantFetchBlock:
+  Exclude:
+    - 'config/puma.rb'
+
+Style/StringConcatenation:
+  Exclude:
+    - 'app/helpers/public/notifications_helper.rb'
+
+Layout/LineLength:
+  Max: 154
+

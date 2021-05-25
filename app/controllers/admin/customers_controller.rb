@@ -18,11 +18,10 @@ class Admin::CustomersController < ApplicationController
     end
   end
 
-
   private
 
   def customer_params
-    params.require(:customer).permit(:nickname, :first_name, :last_name, :first_kana_name, :last_kana_name, :is_valid, :email)
+    params.require(:customer).permit(:nickname, :first_name, :last_name, :first_kana_name, :last_kana_name, :is_valid,
+                                     :email)
   end
-
 end

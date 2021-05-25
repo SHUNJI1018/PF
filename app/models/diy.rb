@@ -1,5 +1,4 @@
 class Diy < ApplicationRecord
-
   belongs_to :customer
   belongs_to :genre
   attachment :image
@@ -17,7 +16,7 @@ class Diy < ApplicationRecord
 
   # 通知機能
   def create_notification_by(current_customer)
-    notification = current_customer.active_notifications.new(diy_id: id, visited_id: customer_id, action: "favorite")
+    notification = current_customer.active_notifications.new(diy_id: id, visited_id: customer_id, action: 'favorite')
     notification.save if notification.valid?
   end
 
@@ -31,12 +30,10 @@ class Diy < ApplicationRecord
   end
 
   def save_notification_diy_comment!(current_customer, diy_comment_id, visited_id)
-    notification = current_customer.active_notifications.new(diy_id: id, diy_comment_id: diy_comment_id, visited_id: visited_id, action: 'diy_comment')
+    notification = current_customer.active_notifications.new(diy_id: id, diy_comment_id: diy_comment_id,
+                                                             visited_id: visited_id, action: 'diy_comment')
     # 投稿に対する自分がコメントの場合は、通知済み
-    if notification.visiter_id == notification.visited_id
-      notification.checked = true
-    end
+    notification.checked = true if notification.visiter_id == notification.visited_id
     notification.save if notification.valid?
   end
-
 end

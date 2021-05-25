@@ -10,31 +10,31 @@
   <table>
     <tbody>
       <tr>
-        <td>ニックネーム</td>
-        <td><%= customer.nickname %></td>
+        <td class="td-td">ニックネーム</td>
+        <td class="td-td"><%= customer.nickname %></td>
       </tr>
       <tr>
-        <td>氏名</td>
-        <td><%= customer.last_name %>　<%= customer.first_name %></td>
+        <td class="td-td">氏名</td>
+        <td class="td-td"><%= customer.last_name %>　<%= customer.first_name %></td>
       </tr>
       <tr>
-        <td>カナ</td>
-        <td><%= customer.last_kana_name %>　<%= customer.first_kana_name %></td>
+        <td class="td-td">カナ</td>
+        <td class="td-td"><%= customer.last_kana_name %>　<%= customer.first_kana_name %></td>
       </tr>
       <tr>
       <tr>
-        <td>メールアドレス</td>
-        <td><%= customer.email %></td>
+        <td class="td-td">メールアドレス</td>
+        <td class="td-td"><%= customer.email %></td>
       </tr>
       <tr>
-        <td><strong><%= customer.followings.count %></strong></td>
-        <td>
+        <td class="td-td"><strong><%= customer.followings.count %></strong></td>
+        <td class="td-td">
           <%= link_to "フォロー中", customer_followings_path(customer) %>
         </td>
       </tr>
       <tr>
-        <td><strong><%= customer.followers.count %></strong></td>
-        <td>
+        <td class="td-td"><strong><%= customer.followers.count %></strong></td>
+        <td class="td-td">
           <%= link_to "フォロワー", customer_followers_path(customer) %>
         </td>
       </tr>

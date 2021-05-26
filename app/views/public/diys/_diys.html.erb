@@ -12,6 +12,9 @@
       <div class="explanation"><%= diy.explanation %></div>
       <div class="diy-left">
         <div>
+          閲覧数：<%= diy.impressionist_count(:filter=>:session_hash) %>&emsp;
+        </div>
+        <div>
           <i class="far fa-thumbs-up"><%= diy.favorites.count %></i>&emsp;
         </div>
         <div>

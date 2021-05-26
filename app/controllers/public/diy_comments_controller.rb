@@ -19,6 +19,6 @@ class Public::DiyCommentsController < ApplicationController
   private
 
   def diy_comment_params
-    params.require(:diy_comment).permit(:comment)
+    params.require(:diy_comment).permit(:comment, :rate)
   end
 end

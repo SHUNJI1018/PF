@@ -1,8 +1,11 @@
 class Public::DiysController < ApplicationController
   before_action :authenticate_customer!, except: :show
+  # impressionist
 
   def show
     @diy = Diy.find(params[:id])
+    # byebug
+    impressionist(@diy, nil, :unique => [:session_hash.to_s])
     @diy_comment = DiyComment.new
   end
 

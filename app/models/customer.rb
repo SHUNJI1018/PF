@@ -22,7 +22,7 @@ class Customer < ApplicationRecord
   validates :nickname, :last_name, :first_name, :last_kana_name, :first_kana_name, presence: true
 
   # ニックネームの一意性
-  validates :nickname, uniqueness: true
+  validates :nickname, uniqueness: true, length: {maximum: 10}
 
   # サインイン時のカタカナ入力に関するバリデーション
   validates :last_kana_name, :first_kana_name,

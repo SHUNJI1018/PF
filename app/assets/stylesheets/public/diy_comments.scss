@@ -1,0 +1,28 @@
+// Place all the styles related to the public/diy_comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment {
+  
+  &__box {
+    padding-top: 10px;
+    
+    &--name {
+      display: inline-block;
+      padding-right: 10px;
+    }
+    &--review {
+      display: inline-block;
+    }
+    &--text {
+      width: 800px;
+      height: 100px;
+      overflow: auto;
+    }
+    &--destroy {
+      padding-bottom: 20px;
+      font-size: 0.7rem;
+      text-align: right;
+    }
+  }
+}

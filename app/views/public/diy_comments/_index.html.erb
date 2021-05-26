@@ -1,25 +1,37 @@
 <div class="comment">
-  <h4>コメント一覧</h4>
+  <h4>レビュー</h4>
     <hr>
     <div class="comment__box">
       <% diy.diy_comments.each do |diy_comment| %>
-      <% diy_comment_customer = diy_comment.customer %>
-      <div class="comment__box--name">
-        <%= link_to customer_path(diy_comment_customer), class: "customer_#{diy_comment_customer.id}" do %>
-          <%= diy_comment_customer.nickname %>
-        <% end %>
-      </div>
-      <div class="comment__box--review">
-        aiueo
-      </div>
-      <div class="comment__box--text">
-        <%= diy_comment.comment %>
-      </div>
-      <div class="comment__box--destroy">
-        <% if current_customer == diy_comment_customer %>
-          <%= link_to 'コメント削除', diy_diy_comment_path(diy_comment.diy_id, diy_comment.id), method: :delete, remote: true %>
-        <% end %>
-      </div>
+        <% diy_comment_customer = diy_comment.customer %>
+        <div class="comment__box--name">
+          <%= link_to customer_path(diy_comment_customer), class: "customer_#{diy_comment_customer.id}" do %>
+            <%= diy_comment_customer.nickname %>
+          <% end %>
+        </div>
+        <div class="comment__box--review">
+          <div id="star-rate-<%= diy_comment.id %>", class="star-box"></div>
+          <script>
+          $("#star-rate-<%= diy_comment.id %>").raty({
+            size: 36,
+            starOff: "<%= asset_path('star-off.png') %>",
+            starOn : "<%= asset_path('star-on.png') %>",
+            starHalf: "<%= asset_path('star-half.png') %>",
+            half: true,
+            readOnly: true,
+            score: <%= diy_comment.rate %>,
+          });
+          </script>
+        </div>
+        <div class="comment__box--text">
+          <%= diy_comment.comment %>
+        </div>
+        <div class="comment__box--destroy">
+          <% if current_customer == diy_comment_customer %>
+            <%= link_to 'コメント削除', diy_diy_comment_path(diy_comment.diy_id, diy_comment.id), method: :delete, remote: true %>
+          <% end %>
+        </div>
       <% end %>
     </div>
 </div>
+

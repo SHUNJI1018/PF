@@ -28,8 +28,24 @@
   <!--ログインしているときのみコメント投稿機能有効-->
   <% if customer_signed_in? %>
     <%= form_with model:[@diy,@diy_comment], url: diy_diy_comments_path(@diy) do |f| %>
+    <div class="star-form-group" id="star1">
+      <%= f.label :rate,'評価', class:'star-review' %>
+    </div>
+    <div>
       <%= f.text_area :comment, size:"83x5" %>
       <%= f.submit '送信'%>
+    </div>
     <% end %>
   <% end %>
 </div>
+
+<script>
+$('#star1').raty({
+  size: 13,
+  starOff:  '<%= asset_path('star-off.png') %>',
+  starOn: '<%= asset_path('star-on.png') %>',
+  starHalf: '<%= asset_path('star-half.png') %>',
+  scoreName: 'diy_comment[rate]',
+  half: true,
+});
+</script>

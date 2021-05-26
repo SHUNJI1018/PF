@@ -7,7 +7,9 @@ class Diy < ApplicationRecord
   has_many :diy_comments, dependent: :destroy
   has_many :notifications, dependent: :destroy
 
-  validates :genre_id, :diy_name, :image_id, :explanation, presence: true
+  validates :genre_id, :diy_name, :image, :explanation, presence: true
+
+  is_impressionable counter_cache: true
 
   # いいね機能
   def favorited_by?(customer)

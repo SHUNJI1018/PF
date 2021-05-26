@@ -11,3 +11,14 @@ Admin.create!(
   email: 'admin@admin.com',
   password: '000000'
 )
+
+# ゲストユーザー
+Customer.create!(
+  nickname: 'ゲスト',
+  last_name: 'てすと',
+  first_name: 'たろう',
+  last_kana_name: 'テスト',
+  first_kana_name: 'タロウ',
+  email: 'guest1@guest.com',
+  password: 'guest123'
+)

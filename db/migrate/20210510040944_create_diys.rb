@@ -6,6 +6,7 @@ class CreateDiys < ActiveRecord::Migration[5.2]
       t.string :diy_name
       t.string :image_id
       t.text :explanation
+      t.integer :impressions_count, default: 0
 
       t.timestamps
     end

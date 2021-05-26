@@ -16,6 +16,14 @@ RSpec.describe 'Customerモデルのテスト', type: :model do
         customer.nickname = other_customer.nickname
         is_expected.to eq false
       end
+      it '文字数10字以下である => true' do
+        customer.nickname = Faker::Lorem.characters(number: 10)
+        is_expected.to eq true
+      end
+      it '文字数11字以上である => false' do
+        customer.nickname = Faker::Lorem.characters(number: 11)
+        is_expected.to eq false
+      end
     end
 
     context 'last_nameカラム' do

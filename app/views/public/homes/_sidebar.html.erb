@@ -36,7 +36,7 @@
     </li>
 
   <% elsif admin_signed_in? %>
-    <li class="nav__item"><%= link_to "TOP", root_path %></li>
+    <li class="nav__item"><%= link_to "TOP", root_path, data: {"turbolinks" => false} %></li>
     <li class="nav__item"><%= link_to "会員一覧", admin_customers_path %></li>
     <li class="nav__item"><%= link_to "ジャンル追加", admin_genres_path %></li>
     <li class="menu-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>

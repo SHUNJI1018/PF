@@ -1,7 +1,11 @@
 class Public::DiysController < ApplicationController
+  before_action :authenticate_customer!, except: :show
+  # impressionist
 
   def show
     @diy = Diy.find(params[:id])
+    # byebug
+    impressionist(@diy, nil, unique: [:session_hash.to_s])
     @diy_comment = DiyComment.new
   end
 
@@ -19,20 +23,18 @@ class Public::DiysController < ApplicationController
     end
   end
 
-  def update
-  end
+  def update; end
 
   def destroy
     @diy = Diy.find(params[:id])
     @diy.destroy
-    redirect_to customer_path(current_customer)
+    # ユーザー本人または管理者が削除可能
+    redirect_to customer_path(@diy.customer)
   end
-
 
   private
 
   def diy_params
     params.require(:diy).permit(:genre_id, :diy_name, :image, :explanation)
   end
-
 end

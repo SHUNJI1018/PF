@@ -1,0 +1,36 @@
+<div>
+  <%= form_with model: @customer, url:admin_customer_path, local:true do |f| %>
+    <div>
+      <%= f.label :"会員ID" %>
+      <%= f.label :"#{@customer.id}" %>
+    </div>
+    <div>
+      <%= f.label :"ニックネーム" %>
+      <%= f.text_field :nickname %>
+    </div>
+    <div>
+      <%= f.label :"氏名" %>
+      <%= f.text_field :last_name %>
+      <%= f.text_field :first_name %>
+    </div>
+     <div>
+      <%= f.label :"氏名" %>
+      <%= f.text_field :last_kana_name %>
+      <%= f.text_field :first_kana_name %>
+    </div>
+    <div>
+      <%= f.label :"メールアドレス" %>
+      <%= f.text_field :email %>
+    </div>
+    <div>
+      <%= f.label :"ステータス" %>
+      <%= f.radio_button :is_valid, "有効" %>
+      <%= f.label :is_valid, "有効", value: :false %>
+      <%= f.radio_button :is_valid, "退会" %>
+      <%= f.label :is_valid, "退会済", value: :true %>
+    </div>
+    <div class="col-sm-4">
+      <%= f.submit "変更を保存" %>
+    </div>
+  <% end %>
+</div>

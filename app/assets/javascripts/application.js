@@ -15,3 +15,39 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery.raty.js
+
+/*global $*/
+
+$(document).ready(function() {
+  $('.top-visual').css('display', 'none').fadeIn(3000);
+});
+
+$(document).ready(function () {
+  $(".gneres__image").skippr({
+    transition : 'slide',
+    speed : 1000,
+    easing : 'easeOutQuart',
+    navType : 'block',
+    childrenElementType : 'div',
+    arrows : true,
+    autoPlay : true,
+    autoPlayDuration : 3000,
+    keyboardOnAlways : false,
+    hidePrevious : false
+  });
+});
+
+
+var window_h = $(window).height();
+$(window).on("scroll", function() {
+  var scroll_top = $(window).scrollTop();
+  $(".share__action").each(function() {
+    var elem_pos = $(this).offset().top;
+    if (scroll_top >= elem_pos - window_h+300) {
+      $(this).addClass("fadein");
+    } else {
+      $(this).removeClass("fadein");
+    }
+  });
+});

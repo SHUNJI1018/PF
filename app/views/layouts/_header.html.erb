@@ -1,23 +1,5 @@
 <header>
-  <nav>
-    <ul>
-      <% if customer_signed_in? %>
-        <li><%= link_to "マイページ", customer_path(current_customer) %></li>
-        <li><%= link_to "投稿する", new_diy_path %></li>
-        <li><%= link_to "TOP", root_path %></li>
-        <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
-      <% elsif admin_signed_in? %>
-        <li><%= link_to "商品一覧" %></li>
-        <li><%= link_to "会員一覧" %></li>
-        <li><%= link_to "注文履歴一覧" %></li>
-        <li><%= link_to "ジャンル追加", admin_genres_path %></li>
-        <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to "About", about_path %></li>
-        <li><%= link_to "TOP", root_path %></li>
-        <li><%= link_to "新規登録", new_customer_registration_path %></li>
-        <li><%= link_to "ログイン", new_customer_session_path %></li>
-      <% end %>
-    </ul>
-  </nav>
+  <%= link_to root_path, class: 'logo', data: {"turbolinks" => false} do %>
+    <p>UCHI SHOKU</p>
+  <% end %>
 </header>

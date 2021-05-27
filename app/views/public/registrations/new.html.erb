@@ -1,51 +1,40 @@
-<h3>新規会員登録</h3>
 
-<div>
+<div class="sign-up">
+<h3 class="sign-up__title">新規会員登録</h3>
   <%= form_with model: @customer, url:customer_registration_path, local:true do |f| %>
-  
-  <div class="form-group">
-    <%= f.label :"ニックネーム" %>
-    <%= f.text_field :nickname, placeholder: "ニックネーム", class: "nickname" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :"名前" %>
-    <%= f.label :"(姓)", class: "last_name" %>
-    <%= f.text_field :last_name, placeholder: "家職", class: "last_name" %>
-    <%= f.label :"(名)", class: "first_name" %>
-    <%= f.text_field :first_name, placeholder: "太郎", class: "first_name" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :"フリガナ" %>
-    <%= f.label :"(セイ)", class: "last_kana_name"%>
-    <%= f.text_field :last_kana_name, placeholder: "ウチショク", class: "last_kana_name"%>
-    <%= f.label :"(メイ)", class: "first_kana_name" %>
-    <%= f.text_field :first_kana_name,  placeholder: "タロウ", class: "first_kana_name" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :"メールアドレス", class: "email" %>
-    <%= f.email_field :email, autocomplete: "email", placeholder: "tarou@shokunin.com", class: "email" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :"パスワード(6文字以上)", class: "password" %>
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :"パスワード(確認用)", class: "password" %>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="action">
-    <%= f.submit "新規登録" %>
-  </div>
-
+    <table class="sign-up__form">
+      <tr>
+        <td><%= f.label :"ニックネーム" %></td>
+        <td><%= f.text_field :nickname, placeholder: "ニックネーム", class: "nickname" %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :"名前" %></td>
+        <td><%= f.text_field :last_name, placeholder: "姓", class: "last_name" %></td>
+        <td><%= f.text_field :first_name, placeholder: "名", class: "first_name" %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :"フリガナ" %></td>
+        <td><%= f.text_field :last_kana_name, placeholder: "セイ", class: "last_kana_name"%></td>
+        <td><%= f.text_field :first_kana_name,  placeholder: "メイ", class: "first_kana_name" %></td>
+       </tr>
+      <tr>
+        <td><%= f.label :"メールアドレス", class: "email" %></td>
+        <td><%= f.email_field :email, autocomplete: "email", placeholder: "sample@sample.com", class: "email" %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :"パスワード(6文字以上)", class: "password" %></td>
+        <td><%= f.password_field :password, autocomplete: "new-password" %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :"パスワード(確認用)", class: "password" %></td>
+        <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
+      </tr>
+      <tr>
+        <td><%= f.submit "新規登録" %></td>
+      </tr>
+    </table>
   <% end %>
-</div>
-
-<div>
-  <%= link_to "すでに登録済の方はこちら", new_customer_session_path %>
+  <div class="sign-up__link">
+    <%= link_to "すでに登録済の方はこちら", new_customer_session_path %>
+  </div>
 </div>

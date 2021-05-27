@@ -1,17 +1,26 @@
-<h1>画像投稿フォーム</h1>
-<div>
+<%= render 'shared/error_messages', obj: @diy %>
+
+<div class="diy-upload">
+  <h1>投稿フォーム</h1>
+  <div class="diy-upload">
   <%= form_with model: @diy, local:true do |f| %>
     <div>
       <%= f.label :"画像" %>
+    </div> 
+    <div>
       <%= f.attachment_field :image %>
     </div>
     <div>
       <%= f.label :"タイトル" %>
+    </div>  
+    <div>
       <%= f.text_field :diy_name %>
     </div>
     <div>
       <%= f.label :"説明" %>
-      <%= f.text_area :explanation %>
+    </div>  
+    <div>
+      <%= f.text_area :explanation, size: "70x30" %>
     </div>
     <div>
       <%= f.label :"ジャンル" %>
@@ -19,4 +28,5 @@
     </div>
     <%= f.submit '投稿' %>
   <% end %>
+  </div>
 </div>

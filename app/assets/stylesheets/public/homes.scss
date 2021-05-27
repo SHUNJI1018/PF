@@ -1,0 +1,167 @@
+// Place all the styles related to the public/homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.search-feild {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 50px;
+}
+
+.toppage {
+  text-align: center;
+  width: 80rem;
+}
+
+.top-title {
+  text-align: center;
+  width: 60%;
+  font-size: 2rem;
+  margin: 50px auto;
+  color: white;
+  text-shadow: 3px 0 3px black;
+  background-image: image-url('top-title.jpg');
+}
+
+.top-visual {
+  display: flex;
+  height: 500px;
+  margin: 150px 150px 0px;
+
+  &__image {
+    background-image: image-url('shokunin.jpg');
+    background-size: contain;
+    background-position: top center;
+    width: 180rem;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+  }
+
+  &__text {
+    margin: 20px 0 50px 30px;
+    text-align: left;
+    font-size: 1.5rem;
+    color: #777777;
+
+    &--title {
+      border-top: double 3px black;
+      text-align: center;
+      font-size: 2rem;
+      padding-bottom: 60px;
+      color: black;
+    }
+  }
+}
+
+.share {
+  height: 700px;
+  &__title {
+    margin: 0 200px;
+    border-top: double 3px black;
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 60px;
+    color: black;
+  }
+
+  &__action {
+    margin: 50px 450px 150px;
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 20px;
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: opacity 1.5s, transform 0.5s;
+    border-style: dashed solid;
+  }
+}
+
+.share-text {
+  text-decoration: none;
+  color: black;
+}
+
+// ボタンに関するCSS
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 1rem 1rem 3.5rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+
+
+a.btn-flat {
+  border: 2px solid #000;
+  border-radius: 0;
+  background: #fff;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  width: 240px;
+}
+
+a.btn-flat:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 100%;
+  content: '';
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-transform: translateX(0) translateY(0);
+  transform: translateX(0) translateY(0);
+  border-radius: 0 50% 50% 0;
+  background: #000;
+}
+
+a.btn-flat:hover:before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: bold;
+  line-height: 48px;
+  text-align: center;
+  width: 48px;
+  height: 48px;
+  content: '\f061';
+  -webkit-transform: translateX(220px) translateY(.35rem);
+  transform: translateX(220px) translateY(.35rem);
+  color: #fff;
+  border-radius: 50%;
+}
+
+// "共有してみる"のアクション
+
+.fadein {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hr-style {
+  border-bottom: double 3px black;
+}

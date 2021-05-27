@@ -1,42 +1,44 @@
-<% if request.fullpath == "/customers/sign_in" %>
-  <h3>ログイン</h3>
-<% else %>
-  <h3>管理者ログイン</h3>
-<% end %>
-
-<div>
-  <%= form_with model: resource, as: resource_name, url:session_path(resource_name), local: true  do |f| %>
-  <div>
-    <%= f.label :"メールアドレス", class: "email" %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-  <div>
-    <%= f.label :"パスワード", class: "password" %>
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "ログイン" %>
-  </div>
-  <% end %>
-</div>
-
-<div>
+<div class="log-in">
   <% if request.fullpath == "/customers/sign_in" %>
-    <p>会員登録がお済でない方</p>
-    <p><%= link_to "こちら", new_customer_registration_path %> から新規登録を行って下さい。</p>
+    <h3 class="log-in__title">ログイン</h3>
+  <% else %>
+    <h3 class="log-in__title">" 管理者 "ログイン</h3>
   <% end %>
-</div>
 
-<div>
-  <% if request.fullpath == "/customers/sign_in" %>
-  <%= link_to "管理者", new_admin_session_path %>
-  <% end %>
-</div>
+  <div class="log-in__form">
+    <%= form_with model: resource, as: resource_name, url:session_path(resource_name), local: true  do |f| %>
+    <div class="log-in__form--box">
+      <%= f.label :"メールアドレス", class: "email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+    <div class="log-in__form--box">
+      <%= f.label :"パスワード", class: "password" %>
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+    <div class="log-in__form--box">
+      <%= f.submit "ログイン" %>
+    </div>
+    <% end %>
+  </div>
 
-<div>
-  <% if request.fullpath != "/customers/sign_in" %>
-    <p>会員の方は</p>
-    <p><%= link_to "こちら", new_customer_session_path %> からログインを行って下さい。</p>
-  <% end %>
+  <div>
+    <% if request.fullpath == "/customers/sign_in" %>
+      <p>会員登録がお済でない方</p>
+      <p><%= link_to "こちら", new_customer_registration_path %> から新規登録を行って下さい。</p>
+    <% end %>
+  </div>
+  
+  <div>
+    <% if request.fullpath != "/customers/sign_in" %>
+      <p><strong>会員の方</strong>は</p>
+      <p><%= link_to "こちら", new_customer_session_path %> からログインを行って下さい。</p>
+    <% end %>
+  </div>
+
+  <div class="log-in__admin">
+    <% if request.fullpath == "/customers/sign_in" %>
+    <%= link_to "管理者", new_admin_session_path %>
+    <% end %>
+  </div>
 </div>
 

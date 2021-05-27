@@ -51,7 +51,7 @@ Rails.application.routes.draw do
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'
 
-      # 退会機能に関するルーティング
+      # ユーザー凍結機能に関するルーティング(現状管理者のみ可能)
       collection do
         get 'hide' => 'customers#hide'
         post 'out'

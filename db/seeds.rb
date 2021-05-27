@@ -14,11 +14,24 @@ Admin.create!(
 
 # ゲストユーザー
 Customer.create!(
-  nickname: 'ゲスト',
-  last_name: 'てすと',
-  first_name: 'たろう',
-  last_kana_name: 'テスト',
-  first_kana_name: 'タロウ',
-  email: 'guest1@guest.com',
-  password: 'guest123'
+  [
+    {
+      nickname: 'ゲスト1',
+      last_name: 'てすと',
+      first_name: 'たろう',
+      last_kana_name: 'テスト',
+      first_kana_name: 'タロウ',
+      email: 'guest1@guest.com',
+      password: 'guest123'
+    },
+    {
+      nickname: 'ゲスト2',
+      last_name: 'てすと',
+      first_name: 'じろう',
+      last_kana_name: 'テスト',
+      first_kana_name: 'ジロウ',
+      email: 'guest2@guest.com',
+      password: 'guest456'
+    }
+  ]
 )

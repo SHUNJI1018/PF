@@ -5,7 +5,7 @@ class Public::DiysController < ApplicationController
   def show
     @diy = Diy.find(params[:id])
     # byebug
-    impressionist(@diy, nil, :unique => [:session_hash.to_s])
+    impressionist(@diy, nil, unique: [:session_hash.to_s])
     @diy_comment = DiyComment.new
   end
 

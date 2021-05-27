@@ -22,7 +22,7 @@ class Customer < ApplicationRecord
   validates :nickname, :last_name, :first_name, :last_kana_name, :first_kana_name, presence: true
 
   # ニックネームの一意性
-  validates :nickname, uniqueness: true, length: {maximum: 10}
+  validates :nickname, uniqueness: true, length: { maximum: 10 }
 
   # サインイン時のカタカナ入力に関するバリデーション
   validates :last_kana_name, :first_kana_name,
@@ -51,5 +51,10 @@ class Customer < ApplicationRecord
       notification = current_customer.active_notifications.new(visited_id: id, action: 'follow')
       notification.save if notification.valid?
     end
+  end
+
+  # ユーザー凍結機能
+  def active_for_authentication?
+    super && (is_valid == '有効')
   end
 end

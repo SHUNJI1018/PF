@@ -24,7 +24,7 @@ https://docs.google.com/spreadsheets/d/1Nc9SUn6EybfGFvf12dtjBevLswmikpG8GOS7QRh9
 - OS：Amazon Linux release 2
 - 言語：HTML,CSS,JavaScript,Ruby"2.6.3",SQL
 - フレームワーク：Ruby on Rails
-- JSライブラリ：jQuery,Bootstrap
+- JSライブラリ：jQuery
 - IDE：Cloud9
 
 ## 使用素材

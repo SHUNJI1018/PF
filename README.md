@@ -2,7 +2,7 @@
 
 ## サイト概要
 　誰でも自宅で簡単に「ものづくり」ができ、アクセサリーなどの小物から家具などの大掛かりなものまで、幅広く制作物を共有・評価できるサイト。
-ユーザーが手作りしたものを共有し、他のユーザーも同じもの作る、またはアレンジするなど気軽に気に入ったものを評価・作成できる、いわば"DIY"に特化した新しいSNS。
+ユーザーが手作りしたものを共有し他のユーザーも同じもの作る、またはアレンジするなど気軽に気に入ったものを評価・作成できる、いわば"DIY"に特化した新しいSNS。
 
 ### サイトテーマ
 誰もが気軽にDIY
@@ -24,7 +24,7 @@ https://docs.google.com/spreadsheets/d/1Nc9SUn6EybfGFvf12dtjBevLswmikpG8GOS7QRh9
 - OS：Amazon Linux release 2
 - 言語：HTML,CSS,JavaScript,Ruby"2.6.3",SQL
 - フレームワーク：Ruby on Rails
-- JSライブラリ：jQuery,Bootstrap
+- JSライブラリ：jQuery
 - IDE：Cloud9
 
 ## 使用素材

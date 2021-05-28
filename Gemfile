@@ -84,6 +84,8 @@ gem 'rubocop-rails', require: false
 
 gem 'impressionist', '~>1.6.1'
 
+gem 'rails-i18n'
+
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'

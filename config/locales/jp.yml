@@ -1,0 +1,34 @@
+ja:
+  activerecord:
+    models:
+      customer: 会員
+      diy: 投稿
+      genre: ジャンル
+    attributes:
+      customer:
+        nickname: ニックネーム
+        last_name: 名前(姓)
+        first_name: 名前(名)
+        last_kana_name: 名前(セイ)
+        first_kana_name: 名前(メイ)
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード(確認)
+      diy:
+        diy_name: タイトル
+        image: 画像
+        explanation: 説明
+        genre: ジャンル
+      genre:
+        name: ジャンル
+  errors:
+    format: "%{attribute}%{message}"
+    messages:
+      blank: を入力してください
+      confirmation: と%{attribute}の入力が一致しません
+      empty: を入力してください
+      invalid: は不正な値です
+      not_a_number: は数値で入力してください
+      required: を入力してください
+      taken: はすでに他のユーザーに使用されています
+      unauthenticated: ログインしてください

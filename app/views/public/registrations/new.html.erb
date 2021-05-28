@@ -2,6 +2,7 @@
 <div class="sign-up">
 <h3 class="sign-up__title">新規会員登録</h3>
   <%= form_with model: @customer, url:customer_registration_path, local:true do |f| %>
+  <%= render 'shared/error_messages', obj: @customer %>
     <table class="sign-up__form">
       <tr>
         <td><%= f.label :"ニックネーム" %></td>

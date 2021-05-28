@@ -1,7 +1,6 @@
-<%= render 'shared/error_messages', obj: @diy %>
-
 <div class="diy-upload">
   <h1>投稿フォーム</h1>
+  <%= render 'shared/error_messages', obj: @diy %>
   <div class="diy-upload">
   <%= form_with model: @diy, local:true do |f| %>
     <div>

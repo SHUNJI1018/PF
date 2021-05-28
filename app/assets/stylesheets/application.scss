@@ -208,7 +208,7 @@ th {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  
+
   &__title {
     text-align: center;
     font-size: 2rem;
@@ -237,7 +237,7 @@ th {
       padding: 5px 30px;
     }
   }
-  
+
   &__admin {
     margin-top: 200px;
     text-align: right;
@@ -249,14 +249,19 @@ th {
     text-align: center;
     font-size: 2rem;
   }
-  
+
   &__form input[type="submit"] {
     padding: 5px 30px;
   }
-  
+
   &__link {
     margin-top: 50px;
     margin-right: 50px;
     text-align: right;
   }
+}
+
+.error-text {
+  color: red;
+  margin-left: 40px;
 }

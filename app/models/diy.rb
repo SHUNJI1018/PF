@@ -9,7 +9,7 @@ class Diy < ApplicationRecord
 
   validates :genre_id, :diy_name, :image, :explanation, presence: true
 
-  is_impressionable counter_cache: true
+  is_impressionable #counter_cache: true
 
   # いいね機能
   def favorited_by?(customer)
